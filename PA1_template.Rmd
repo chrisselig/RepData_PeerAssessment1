@@ -1,25 +1,26 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
+title: "Personal Activity Monitoring Device Analysis"
+author: "Chris Selig"
+date: "November 22, 2016"
 output: 
-  html_document:
-    keep_md: true
+  html_document: 
+    keep_md: yes
 ---
 
+##Initial Data Load into R, and Processing
+###Load Data
+```{r}
+unzip("activity.zip")
+activitydata <- read.csv("activity.csv")
+```
 
-## Loading and preprocessing the data
+###Process Data
+```{r}
+activitydata$date <- as.Date(activitydata$date,format = "%Y-%m-%d")
+```
 
+###Libraries Used in the Analysis
+```{r}
+library(ggplot2)
+```
 
-
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
-
-
-
-## Imputing missing values
-
-
-
-## Are there differences in activity patterns between weekdays and weekends?
